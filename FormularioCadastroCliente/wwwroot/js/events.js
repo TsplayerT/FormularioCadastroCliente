@@ -42,9 +42,6 @@ function validar() {
             padding: "2em",
             backdrop: "rgba(0, 0, 0, 0.5)"
         });
-        //.then(() => {
-        //    retorno = true;
-        //});
         return true;
     }
     return false;
