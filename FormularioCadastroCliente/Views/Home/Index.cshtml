@@ -30,62 +30,62 @@
 </head>
 <body>
 
-    <div class="page">
-        <div class="card">
-            <div class="card-head">
-                <h2 class="title">Formulário</h2>
-            </div>
-            <div class="card-body">
-                <form name="form" method="post" asp-controller="Home", asp-action="Index" id="form" enctype="multipart/form-data">
+<div class="page">
+    <div class="card">
+        <div class="card-head">
+            <h2 class="title">Formulário</h2>
+        </div>
+        <div class="card-body">
+            <form name="form" method="post" asp-controller="Home", asp-action="Index" id="form" enctype="multipart/form-data">
 
-                    <div class="form-group">
-                        <label class="col-12">Razão Social</label>
-                        <input class="col-12" name ="RazaoSocial" id="RazaoSocial">
-                    </div>
+                <div class="form-group">
+                    <label class="col-12">Razão Social</label>
+                    <input class="col-12" name ="RazaoSocial" id="RazaoSocial">
+                </div>
 
-                    <div class="form-group">
-                        <label class="col-12">Nome Fantasia</label>
-                        <input class="col-12" name="NomeFantasia" id="NomeFantasia">
-                    </div>
+                <div class="form-group">
+                    <label class="col-12">Nome Fantasia</label>
+                    <input class="col-12" name="NomeFantasia" id="NomeFantasia">
+                </div>
 
-                    <div class="form-group">
-                        <label class="col-12">CNPJ</label>
-                        <input class="col-12" name="Cnpj" id="Cnpj" placeholder="00.000.000/0000-00">
-                    </div>
+                <div class="form-group">
+                    <label class="col-12">CNPJ</label>
+                    <input class="col-12" name="Cnpj" id="Cnpj" placeholder="00.000.000/0000-00">
+                </div>
 
-                    <div class="form-group">
-                        <label class="col-12">Data de Abertura da Empresa</label>
-                        <input class="col-12" name="DataAberturaEmpresa" id="DataAberturaEmpresa" placeholder="dd/mm/yyyy">
-                    </div>
+                <div class="form-group">
+                    <label class="col-12">Data de Abertura da Empresa</label>
+                    <input class="col-12" name="DataAberturaEmpresa" id="DataAberturaEmpresa" placeholder="dd/mm/yyyy">
+                </div>
 
-                    <div class="form-group">
-                        <label class="col-12">Endereço</label>
-                        <input class="col-12" name="Endereco" id="Endereco">
-                    </div>
+                <div class="form-group">
+                    <label class="col-12">Endereço</label>
+                    <input class="col-12" name="Endereco" id="Endereco">
+                </div>
 
-                    <div class="form-group">
-                        <label class="col-12">Bairro</label>
-                        <input class="col-12" name="Bairro" id="Bairro">
-                    </div>
+                <div class="form-group">
+                    <label class="col-12">Bairro</label>
+                    <input class="col-12" name="Bairro" id="Bairro">
+                </div>
 
-                    <div class="form-group">
-                        <label class="col-12">Cidade</label>
-                        <input class="col-12" name="Cidade" id="Cidade">
-                    </div>
+                <div class="form-group">
+                    <label class="col-12">Cidade</label>
+                    <input class="col-12" name="Cidade" id="Cidade">
+                </div>
 
-                    <div class="form-group">
-                        <label class="col-12">UF</label>
-                        <input class="col-12" name="Uf" id="Uf" maxlength="2">
-                    </div>
-                    <div>
-                        <button class="btn" id="botao" name="botao" type="submit" onclick="return validar()">Registrar</button>
-                    </div>
-                </form>
-            </div>
+                <div class="form-group">
+                    <label class="col-12">UF</label>
+                    <input class="col-12" name="Uf" id="Uf" maxlength="2">
+                </div>
+                <div>
+                    <button class="btn" id="botao" name="botao" type="submit" onclick="return validar()">Registrar</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
         $('#DataAberturaEmpresa').datepicker({
             language: "pt-BR",

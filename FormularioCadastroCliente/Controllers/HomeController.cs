@@ -27,7 +27,7 @@ namespace FormularioCadastroCliente.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(Cliente cliente)
+        public IActionResult Index(Cliente cliente)
         {
             CadastroContexo.Clientes.Add(cliente);
             CadastroContexo.SaveChanges();

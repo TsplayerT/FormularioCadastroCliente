@@ -10,7 +10,7 @@ function validar() {
     var Endereco = document.getElementById("Endereco").value;
     var Bairro = document.getElementById("Bairro").value;
     var Cidade = document.getElementById("Cidade").value;
-    var Uf = document.getElementById("UF").value;
+    var Uf = document.getElementById("Uf").value;
 
     if (preenchido(RazaoSocial) || preenchido(NomeFantasia) || preenchido(Cnpj) || preenchido(DataAberturaEmpresa) || preenchido(Endereco) || preenchido(Bairro) || preenchido(Cidade) || preenchido(Uf)) {
         Swal.fire({
@@ -41,9 +41,11 @@ function validar() {
             type: "success",
             padding: "2em",
             backdrop: "rgba(0, 0, 0, 0.5)"
-        }).then(() => {
-            location.reload();
         });
+        //.then(() => {
+        //    retorno = true;
+        //});
+        return true;
     }
     return false;
 }
