@@ -1,0 +1,54 @@
+label {
+    color: black;
+    font-size: 15px;
+    font-weight: 300;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+input {
+    background-color: rgb(200, 200, 200);
+    border-radius: 15px;
+    text-transform: uppercase;
+    height: 40px;
+    border: none;
+}
+
+button {
+    color: rgb(250, 250, 250);
+    background-color: rgb(0, 0, 0);
+    width: 200px;
+    text-transform: uppercase;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+}
+
+.card-head {
+    padding: 20px 0;
+    background: #1a1a1a;
+    border-radius: 10px 10px 0 0;
+}
+
+.page {
+    background-color: rgb(100, 100, 100);
+    padding: 50px; 800px; 50px; 800px;
+}
+*:focus {
+    outline: none;
+    border: none;
+}
