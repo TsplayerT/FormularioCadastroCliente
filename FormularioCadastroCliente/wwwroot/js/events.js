@@ -38,7 +38,7 @@ function validar(action) {
         });
     } else {
         Swal.fire({
-            title: `Cliente${action === "editar" ? "atualizado" : "registrado"}com sucesso!`,
+            title: `Cliente ${action === "editar" ? "atualizado" : "registrado"} com sucesso!`,
             type: "success",
             padding: "2em",
             backdrop: "rgba(0, 0, 0, 0.5)"

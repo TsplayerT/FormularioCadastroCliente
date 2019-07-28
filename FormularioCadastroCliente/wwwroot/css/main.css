@@ -15,11 +15,11 @@ input {
     border: none;
 }
 
-input:read-only {
-    background-color: rgb(50, 50, 50);
-    color: rgb(200, 200, 200);
-    cursor: not-allowed;
-}
+    input:read-only {
+        background-color: rgb(50, 50, 50);
+        color: rgb(200, 200, 200);
+        cursor: not-allowed;
+    }
 
 button {
     color: rgb(250, 250, 250);
@@ -55,10 +55,7 @@ button {
 
 .page {
     background-color: rgb(100, 100, 100);
-    padding: 50px;
-    800px;
-    50px;
-    800px;
+    padding: 50px 0 0 0;
 }
 
 *:focus {
