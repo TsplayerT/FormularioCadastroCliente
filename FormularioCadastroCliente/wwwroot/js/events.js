@@ -37,12 +37,14 @@ function validar(action) {
             backdrop: "rgba(0, 0, 0, 0.5)"
         });
     } else {
-        Swal.fire({
-            title: `Cliente ${action === "editar" ? "atualizado" : "registrado"} com sucesso!`,
-            type: "success",
-            padding: "2em",
-            backdrop: "rgba(0, 0, 0, 0.5)"
-        });
+        if (preenchido(action)) {
+            Swal.fire({
+                title: `Cliente ${action} com sucesso!`,
+                type: "success",
+                padding: "2em",
+                backdrop: "rgba(0, 0, 0, 0.5)"
+            });
+        }
         return true;
     }
     return false;

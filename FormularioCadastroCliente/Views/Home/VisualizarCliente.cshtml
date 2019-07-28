@@ -29,59 +29,59 @@
                 <form asp-action="Visualizar" id="form" name="form">
 
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" asp-for="Id" readonly/>
+                    <input type="hidden" asp-for="Id" readonly />
 
                     <div class="form-group">
                         <label class="col-12" asp-for="RazaoSocial"></label>
-                        <input asp-for="RazaoSocial" class="col-12" name="RazaoSocial" id="RazaoSocial" readonly/>
+                        <input asp-for="RazaoSocial" class="col-12" name="RazaoSocial" id="RazaoSocial" readonly />
                         <span asp-validation-for="RazaoSocial" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label class="col-12" asp-for="NomeFantasia"></label>
-                        <input asp-for="NomeFantasia" class="col-12" name="NomeFantasia" id="NomeFantasia" readonly/>
+                        <input asp-for="NomeFantasia" class="col-12" name="NomeFantasia" id="NomeFantasia" readonly />
                         <span asp-validation-for="NomeFantasia" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label class="col-12" asp-for="Cnpj"></label>
-                        <input asp-for="Cnpj" class="col-12" name="Cnpj" id="Cnpj" placeholder="00.000.000/0000-00" readonly/>
+                        <input asp-for="Cnpj" class="col-12" name="Cnpj" id="Cnpj" placeholder="00.000.000/0000-00" readonly />
                         <span asp-validation-for="Cnpj" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label class="col-12" asp-for="DataAberturaEmpresa"></label>
-                        <input asp-for="DataAberturaEmpresa" class="col-12" name="DataAberturaEmpresa" id="DataAberturaEmpresa" placeholder="dd/mm/yyyy" readonly/>
+                        <input asp-for="DataAberturaEmpresa" class="col-12" name="DataAberturaEmpresa" id="DataAberturaEmpresa" placeholder="dd/mm/yyyy" readonly />
                         <span asp-validation-for="DataAberturaEmpresa" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label class="col-12" asp-for="Endereco"></label>
-                        <input asp-for="Endereco" class="col-12" name="Endereco" id="Endereco" readonly/>
+                        <input asp-for="Endereco" class="col-12" name="Endereco" id="Endereco" readonly />
                         <span asp-validation-for="Endereco" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label class="col-12" asp-for="Bairro"></label>
-                        <input asp-for="Bairro" class="col-12" name="Bairro" id="Bairro" readonly/>
+                        <input asp-for="Bairro" class="col-12" name="Bairro" id="Bairro" readonly />
                         <span asp-validation-for="Bairro" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label class="col-12" asp-for="Cidade"></label>
-                        <input asp-for="Cidade" class="col-12" name="Cidade" id="Cidade" readonly/>
+                        <input asp-for="Cidade" class="col-12" name="Cidade" id="Cidade" readonly />
                         <span asp-validation-for="Cidade" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
                         <label class="col-12" asp-for="Uf"></label>
-                        <input asp-for="Uf" class="col-12" name="Uf" id="Uf" maxlength="2" readonly/>
+                        <input asp-for="Uf" class="col-12" name="Uf" id="Uf" maxlength="2" readonly />
                         <span asp-validation-for="Uf" class="text-danger"></span>
                     </div>
 
                     <div>
-                        <button class="btn" asp-action="Editar" asp-route-id="@Model.Id" id="editar" onclick="return validar()">Editar</button>
-                        <button class="btn" asp-action="Apagar" asp-route-id="@Model.Id" id="apagar" onclick="return validar()">Apagar</button>
+                        <button class="btn" asp-action="Editar" asp-route-id="@Model.Id" id="editar">Editar</button>
+                        <button class="btn" asp-action="Apagar" asp-route-id="@Model.Id" id="apagar">Apagar</button>
                     </div>
                 </form>
             </div>

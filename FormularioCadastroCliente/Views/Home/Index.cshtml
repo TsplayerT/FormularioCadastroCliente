@@ -11,19 +11,34 @@
     <link href="~/css/fonts.css" rel="stylesheet" />
     <link href="~/css/bootstrap.css" rel="stylesheet">
     <link href="~/css/main.css" rel="stylesheet">
+    
+    <script src="js/disable.js"></script>
 
     <style>
-        body, html, .html, page, .page {
+        body, html {
             height: 100%;
         }
+        #criar {
+            margin-top: 30px;
+        }
+        #visualizar {
+            background-color: rgb(200, 200, 200);
+            color: rgb(0, 0, 0);
+            margin-left: 20%;
+        }
+        #visualizar:hover {
+            background-color: rgb(150, 150, 150);
+        }
+        #semRegistro {
+            margin: 20px 100% 0 0;
+        }
     </style>
-
 </head>
 <body>
 
     <div class="page">
-        <div class="card">
-            <div class="card-head">
+        <div class="card" id="card" name="card">
+            <div class="card-head" id="card-head" name="card-head">
                 <h2 class="title">Formulário</h2>
             </div>
             <div class="card-body">
@@ -52,7 +67,7 @@
                                         @Html.DisplayFor(modelItem => item.Cnpj)
                                     </td>
                                     <td>
-                                        <a class="btn" asp-action="Visualizar" asp-route-id="@item.Id">Detalhes</a>
+                                        <a class="btn" asp-action="Visualizar" asp-route-id="@item.Id" id="visualizar">Detalhes</a>
                                     </td>
                                 </tr>
                             }
@@ -61,7 +76,7 @@
                 }
                 else
                 {
-                    <a style="margin-right: 100%"> Não existem clientes registrados </a>
+                    <a id="semRegistro"> Não existem clientes registrados </a>
                 }
                 <a class="btn" asp-action="Criar" id="criar">Criar</a>
             </div>
