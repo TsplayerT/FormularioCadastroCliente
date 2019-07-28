@@ -1,4 +1,5 @@
-﻿function preenchido(str) {
+﻿
+function preenchido(str) {
     return str === null || str != null && str.match(/^ *$/) !== null;
 }
 
@@ -42,12 +43,13 @@ function validar() {
             padding: "2em",
             backdrop: "rgba(0, 0, 0, 0.5)"
         });
-        return true;
+        //$.ajax({
+        //    url: "/Home/" + action
+        //});
     }
     return false;
 }
 function validarCNPJ(cnpj) {
-
     cnpj = cnpj.replace(/[^\d]+/g, "");
 
     if (preenchido(cnpj)) {

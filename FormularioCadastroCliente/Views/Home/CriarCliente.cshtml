@@ -1,0 +1,116 @@
+﻿@model FormularioCadastroCliente.Models.Cliente
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cadastro de Cliente</title>
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="~/css/fonts.css" rel="stylesheet" />
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <link href="vendor/sweetalert2/sweetalert2.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap-datepicker.css" rel="stylesheet">
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/main.css" rel="stylesheet">
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <script src="~/js/global.js"></script>
+    <script src="~/js/polyfill.js"></script>
+    <script src="vendor/sweetalert2/sweetalert2.min.js"></script>
+    <script src="vendor/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="~/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/js/bootstrap-datepicker.pt-BR.min.js"></script>
+    <script src="js/jquery.mask.js"></script>
+    <script src="~/js/events.js"></script>
+    <script src="~/js/disable.js"></script>
+</head>
+<body>
+
+    <div class="page">
+        <div class="card">
+            <div class="card-head">
+                <h2 class="title">Formulário</h2>
+            </div>
+            <div class="card-body">
+                <form name="form" id="form" onsubmit="return validar()">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="form-group">
+                        <label class="col-12" asp-for="RazaoSocial"></label>
+                        <input asp-for="RazaoSocial" class="col-12" name="RazaoSocial" id="RazaoSocial" />
+                        <span asp-validation-for="RazaoSocial" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-12" asp-for="NomeFantasia"></label>
+                        <input asp-for="NomeFantasia" class="col-12" name="NomeFantasia" id="NomeFantasia" />
+                        <span asp-validation-for="NomeFantasia" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-12" asp-for="Cnpj"></label>
+                        <input asp-for="Cnpj" class="col-12" name="Cnpj" id="Cnpj" placeholder="00.000.000/0000-00" />
+                        <span asp-validation-for="Cnpj" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-12" asp-for="DataAberturaEmpresa"></label>
+                        <input asp-for="DataAberturaEmpresa" class="col-12" name="DataAberturaEmpresa" id="DataAberturaEmpresa" placeholder="dd/mm/yyyy" />
+                        <span asp-validation-for="DataAberturaEmpresa" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-12" asp-for="Endereco"></label>
+                        <input asp-for="Endereco" class="col-12" name="Endereco" id="Endereco" />
+                        <span asp-validation-for="Endereco" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-12" asp-for="Bairro"></label>
+                        <input asp-for="Bairro" class="col-12" name="Bairro" id="Bairro" />
+                        <span asp-validation-for="Bairro" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-12" asp-for="Cidade"></label>
+                        <input asp-for="Cidade" class="col-12" name="Cidade" id="Cidade" />
+                        <span asp-validation-for="Cidade" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-12" asp-for="Uf"></label>
+                        <input asp-for="Uf" class="col-12" name="Uf" id="Uf" maxlength="2" />
+                        <span asp-validation-for="Uf" class="text-danger"></span>
+                    </div>
+
+                    <div>
+                        <button class="btn" type="submit" id="criar">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $('#DataAberturaEmpresa').datepicker({
+            language: "pt-BR",
+            autoclose: true,
+            todayHighlight: true
+        });
+        $(document).ready(function () {
+            $('#DataAberturaEmpresa').mask('00/00/0000');
+            $('#Cnpj').mask('00.000.000/0000-00');
+        });
+
+    </script>
+</body>
+</html>
