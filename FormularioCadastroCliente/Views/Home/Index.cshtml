@@ -11,7 +11,7 @@
     <link href="~/css/fonts.css" rel="stylesheet" />
     <link href="~/css/bootstrap.css" rel="stylesheet">
     <link href="~/css/main.css" rel="stylesheet">
-    
+
     <style>
         body, html, .html, page, .page {
             height: 100%;
@@ -27,35 +27,42 @@
                 <h2 class="title">Formulário</h2>
             </div>
             <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.NomeFantasia)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Cnpj)
-                            </th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
+                @if (Model != null && Model.Any())
+                {
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.NomeFantasia)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Cnpj)
-                                </td>
-                                <td>
-                                    <a class="btn" asp-action="Visualizar" asp-route-id="@item.Id">Detalhes</a>
-                                </td>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.NomeFantasia)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Cnpj)
+                                </th>
+                                <th></th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NomeFantasia)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cnpj)
+                                    </td>
+                                    <td>
+                                        <a class="btn" asp-action="Visualizar" asp-route-id="@item.Id">Detalhes</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <a style="margin-right: 100%"> Não existem clientes registrados </a>
+                }
                 <a class="btn" asp-action="Criar" id="criar">Criar</a>
             </div>
         </div>

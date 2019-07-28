@@ -16,19 +16,21 @@
     <link href="~/css/bootstrap.css" rel="stylesheet">
     <link href="~/css/main.css" rel="stylesheet">
 
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/jquery/jquery.js"></script>
+    <script src="~/vendor/jquery/jquery.min.js"></script>
     <script src="vendor/select2/select2.min.js"></script>
     <script src="vendor/datepicker/moment.min.js"></script>
     <script src="vendor/datepicker/daterangepicker.js"></script>
     <script src="~/js/global.js"></script>
     <script src="~/js/polyfill.js"></script>
-    <script src="vendor/sweetalert2/sweetalert2.min.js"></script>
-    <script src="vendor/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="~/vendor/sweetalert2/sweetalert2.js"></script>
+    <script src="~/vendor/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/vendor/sweetalert2/sweetalert2.all.min.js"></script>
     <script src="~/js/bootstrap-datepicker.min.js"></script>
     <script src="~/js/bootstrap-datepicker.pt-BR.min.js"></script>
-    <script src="js/jquery.mask.js"></script>
+    <script src="~/js/jquery.mask.js"></script>
     <script src="~/js/events.js"></script>
-    <script src="~/js/disable.js"></script>
+
 </head>
 <body>
 
@@ -38,7 +40,7 @@
                 <h2 class="title">Formulário</h2>
             </div>
             <div class="card-body">
-                <form name="form" id="form" onsubmit="return validar()">
+                <form method="post" name="form" id="form">
 
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="Id" />
@@ -92,7 +94,7 @@
                     </div>
 
                     <div>
-                        <button class="btn" type="submit" id="criar">Registrar</button>
+                        <button class="btn" type="submit" id="criar" onclick="return validar('Criar')">Registrar</button>
                     </div>
                 </form>
             </div>
@@ -100,7 +102,6 @@
     </div>
 
     <script type="text/javascript">
-
         $('#DataAberturaEmpresa').datepicker({
             language: "pt-BR",
             autoclose: true,
@@ -110,7 +111,7 @@
             $('#DataAberturaEmpresa').mask('00/00/0000');
             $('#Cnpj').mask('00.000.000/0000-00');
         });
-
     </script>
+
 </body>
 </html>

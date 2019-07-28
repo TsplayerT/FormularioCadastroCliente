@@ -42,28 +42,13 @@ namespace FormularioCadastroCliente.Controllers
             return View("CriarCliente");
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Criar([Bind("Id,RazaoSocial,NomeFantasia,Cnpj,DataAberturaEmpresa,Endereco,Bairro,Cidade,Uf")] Cliente cliente)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        CadastroContexto.Add(cliente);
-        //        await CadastroContexto.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View("EditarCliente", cliente);
-        //}
         [HttpPost]
         public async Task<IActionResult> Criar(Cliente cliente)
         {
-            if (ModelState.IsValid)
-            {
-                CadastroContexto.Add(cliente);
-                await CadastroContexto.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View("EditarCliente", cliente);
+            CadastroContexto.Add(cliente);
+            await CadastroContexto.SaveChangesAsync();
+
+            return View("Index", await CadastroContexto.Clientes.ToListAsync());
         }
 
         public async Task<IActionResult> Editar(int? id)

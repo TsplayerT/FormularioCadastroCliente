@@ -3,7 +3,7 @@ function preenchido(str) {
     return str === null || str != null && str.match(/^ *$/) !== null;
 }
 
-function validar() {
+function validar(action) {
     var RazaoSocial = document.getElementById("RazaoSocial").value;
     var NomeFantasia = document.getElementById("NomeFantasia").value;
     var Cnpj = document.getElementById("Cnpj").value;
@@ -38,14 +38,12 @@ function validar() {
         });
     } else {
         Swal.fire({
-            title: "Cliente registrado com sucesso!",
+            title: `Cliente${action === "editar" ? "atualizado" : "registrado"}com sucesso!`,
             type: "success",
             padding: "2em",
             backdrop: "rgba(0, 0, 0, 0.5)"
         });
-        //$.ajax({
-        //    url: "/Home/" + action
-        //});
+        return true;
     }
     return false;
 }

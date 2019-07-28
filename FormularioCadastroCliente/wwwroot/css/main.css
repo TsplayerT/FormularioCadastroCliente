@@ -1,16 +1,24 @@
-label {
+label, th {
     color: black;
     font-size: 15px;
     font-weight: 300;
     font-family: sans-serif;
     text-transform: uppercase;
 }
+
 input {
     background-color: rgb(200, 200, 200);
+    color: rgb(0, 0, 0);
     border-radius: 15px;
     text-transform: uppercase;
     height: 40px;
     border: none;
+}
+
+input:read-only {
+    background-color: rgb(50, 50, 50);
+    color: rgb(200, 200, 200);
+    cursor: not-allowed;
 }
 
 button {
@@ -24,11 +32,12 @@ button {
 }
 
 .title {
-  text-transform: uppercase;
-  font-weight: 700;
-  text-align: center;
-  color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
 }
+
 .card {
     border: none;
     border-radius: 10px;
@@ -46,8 +55,12 @@ button {
 
 .page {
     background-color: rgb(100, 100, 100);
-    padding: 50px; 800px; 50px; 800px;
+    padding: 50px;
+    800px;
+    50px;
+    800px;
 }
+
 *:focus {
     outline: none;
     border: none;
