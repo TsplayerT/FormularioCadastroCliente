@@ -15,8 +15,11 @@
     <link href="~/css/bootstrap-datepicker.css" rel="stylesheet">
     <link href="~/css/bootstrap.css" rel="stylesheet">
     <link href="~/css/main.css" rel="stylesheet">
+    <link href="~/vendor/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet" />
 
     <script src="~/js/disable.js"></script>
+    <script src="~/vendor/jquery/jquery.js"></script>
+    <script src="~/vendor/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 </head>
 <body>
 
@@ -87,5 +90,25 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+
+        $("input").prop('title', 'Habilite edição para alterar os dados');
+
+        $(function () {
+            $(document).tooltip({
+                track: true,
+                delay: 300
+            });
+        });
+
+    </script>
+
+    <style>
+        .ui-tooltip {
+            background-color: rgb(200, 200, 200);
+            color: rgb(50, 50, 50);
+        }
+    </style>
 </body>
 </html>
