@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using FormularioCadastroCliente.Data;
@@ -17,7 +19,9 @@ namespace FormularioCadastroCliente.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await CadastroContexto.Clientes.ToListAsync());
+            var clientes = await CadastroContexto.Clientes.Where(x => x.Visivel).ToListAsync();
+
+            return View(clientes);
         }
 
         public async Task<IActionResult> Visualizar(int? id)
@@ -45,6 +49,10 @@ namespace FormularioCadastroCliente.Controllers
         [HttpPost]
         public async Task<IActionResult> Criar(Cliente cliente)
         {
+            cliente.Visivel = true;
+            cliente.DataCriacao = DateTime.Now.ToString("dd/MM/yyyy");
+            cliente.DataAlteracao = DateTime.Now.ToString("dd/MM/yyyy");
+
             CadastroContexto.Add(cliente);
             await CadastroContexto.SaveChangesAsync();
 
@@ -63,11 +71,12 @@ namespace FormularioCadastroCliente.Controllers
             {
                 return NotFound();
             }
+
             return View("EditarCliente", cliente);
         }
 
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Salvar(int id, [Bind("Id,RazaoSocial,NomeFantasia,Cnpj,DataAberturaEmpresa,Endereco,Bairro,Cidade,Uf")] Cliente cliente)
+        public async Task<IActionResult> Salvar(int id, [Bind("Id,RazaoSocial,NomeFantasia,Cnpj,DataAberturaEmpresa,Endereco,Bairro,Cidade,Uf,Visivel,DataCriacao,DataAlteracao")] Cliente cliente)
         {
             if (id != cliente.Id)
             {
@@ -78,6 +87,8 @@ namespace FormularioCadastroCliente.Controllers
             {
                 try
                 {
+                    cliente.DataAlteracao = DateTime.Now.ToString("dd/MM/yyyy");
+
                     CadastroContexto.Update(cliente);
                     await CadastroContexto.SaveChangesAsync();
                 }

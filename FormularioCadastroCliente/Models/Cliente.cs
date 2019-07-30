@@ -32,5 +32,16 @@ namespace FormularioCadastroCliente.Models
         [Display(Name = "UF")]
         [Column(TypeName = "varchar(2)")]
         public string Uf { get; set; }
+
+        //adicionais
+        [Display(Name = "Visivel")]
+        [Column(TypeName = "tinyint")]
+        public bool Visivel { get; set; }
+        [Display(Name = "DataCriacao")]
+        [Column(TypeName = "varchar(12)")]
+        public string DataCriacao { get; set; }
+        [Display(Name = "DataAlteracao")]
+        [Column(TypeName = "varchar(12)")]
+        public string DataAlteracao { get; set; }
     }
 }
